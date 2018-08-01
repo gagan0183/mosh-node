@@ -2,5 +2,10 @@ function log(message) {
     console.log(message);
 }
 
-console.log(module);
-module.exports.log = log;
+//console.log(module);
+
+//export an object
+//module.exports.log = log;
+
+//export function
+module.exports = log;
