@@ -3,6 +3,9 @@ const logger = require('./logger');
 
 global.console.log(logger);
 
+console.log(__dirname);
+console.log(__filename);
+
 //logger = 1;
 
 //call a function on an object
