@@ -31,5 +31,10 @@ var freeMemory = os.freemem();
 console.log(`total memory is ${totalMemory}`);
 console.log(`free memory is ${freeMemory}`);
 
-var files = fs.readdirSync('./');
-console.log(files);
+//var files = fs.readdirSync('./');
+//console.log(files);
+
+fs.readdir('./', (err, files) => {
+    if(err) console.log(err);
+    else console.log(files);
+});
