@@ -1,6 +1,6 @@
 //use const to import modules as we wont be able to change the value for that
 const fs = require('fs');
-
+const EventEmitter = require('events');
 const logger = require('./logger');
 const os = require('os');
 const path = require('path');
@@ -34,7 +34,15 @@ console.log(`free memory is ${freeMemory}`);
 var files = fs.readdirSync('./');
 console.log(files);
 
-fs.readdir('$', (err, files) => {
+fs.readdir('./', (err, files) => {
     if(err) console.log(err);
     else console.log(files);
 });
+
+var event = new EventEmitter();
+
+event.on('ppp', function() {
+    console.log('event is captured');
+});
+
+event.emit('ppp');
