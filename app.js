@@ -41,8 +41,10 @@ fs.readdir('./', (err, files) => {
 
 var event = new EventEmitter();
 
-event.on('ppp', function() {
-    console.log('event is captured');
+event.on('ppp', function(arg) {
+    console.log('event is captured', arg);
 });
 
-event.emit('ppp');
+event.emit('ppp', {
+    ppp : 90000
+});
