@@ -1,5 +1,8 @@
 //use const to import modules as we wont be able to change the value for that
+const fs = require('fs');
+
 const logger = require('./logger');
+const os = require('os');
 const path = require('path');
 
 global.console.log(logger);
@@ -21,3 +24,12 @@ logger('ppppp');
 
 //global
 //console.log(global);
+
+var totalMemory = os.totalmem();
+var freeMemory = os.freemem();
+
+console.log(`total memory is ${totalMemory}`);
+console.log(`free memory is ${freeMemory}`);
+
+var files = fs.readdirSync('./');
+console.log(files);
