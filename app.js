@@ -1,9 +1,10 @@
-const Logger = require('./logger');
+const http = require('http');
 
-var logger = new Logger();
+const server = http.createServer();
 
-logger.on('logMessage', function(arg) {
-    console.log('Message is there ', arg);
-});
+server.on('connection', (sot) => {
+    console.log('connect');
+})
 
-logger.log('That is app');
+server.listen(9000);
+console.log('Server is listening on port 9000');
